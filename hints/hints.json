@@ -1,0 +1,22 @@
+{
+"classes": [
+    {
+        "classname": "UIDesignTests",
+        "tests" : [
+            {"name": "landscapeTests", "hint": "vihje landscapeTests-ile"},
+            {"name": "portraitTests", "hint": "Kontrolli, kas nupp \"Next\" on ikka all Vasakus nurgas."},
+            {"name": "landscapeTests2", "hint": "vihje landscapeTests2-le"},
+            {"name": "portraitTests2", "hint": "Kontrolli, kas nupp \"Next\" on ikka all Vasakus nurgas."}
+        ]
+    },
+    {
+        "classname": "UIInteractionTests",
+        "tests" : [
+            {"name": "buttonTests", "hint": "vihje buttonTests-ile"},
+            {"name": "recyclerTests", "hint": "Kontrolli, kas teisendus ilmus aknasse."},
+            {"name": "buttonTests2", "hint": "vihje buttonTests2-le"},
+            {"name": "recyclerTests2", "hint": "Kontrolli, kas teisendus ilmus aknasse."}
+        ]
+    }
+    ]
+}

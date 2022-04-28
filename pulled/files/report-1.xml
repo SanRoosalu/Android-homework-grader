@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<testsuite tests="4" failures="0" errors="0" skipped="0" time="7.546" timestamp="2022-04-24T15:08Z">
+  <properties>
+    <property name="device.manufacturer" value="unknown" />
+    <property name="device.model" value="Android SDK built for x86_64" />
+    <property name="device.apiLevel" value="30" />
+  </properties>
+  <testcase name="landscapeTests2(com.example.homework1.UIDesignTests)" classname="com.example.homework1.UIDesignTests" time="2.179" />
+  <testcase name="landscapeTests(com.example.homework1.UIDesignTests)" classname="com.example.homework1.UIDesignTests" time="1.962" />
+  <testcase name="portraitTests2(com.example.homework1.UIDesignTests)" classname="com.example.homework1.UIDesignTests" time="1.122" />
+  <testcase name="portraitTests(com.example.homework1.UIDesignTests)" classname="com.example.homework1.UIDesignTests" time="2.201" />
+</testsuite>

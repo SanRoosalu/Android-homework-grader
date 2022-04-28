@@ -1,0 +1,42 @@
+body {
+    margin: 2rem;
+    font-family: sans-serif;
+}
+#success {
+    color: green;
+}
+#mediocre {
+    color: orange;
+}
+#failure {
+    color: red;
+}
+table {
+    margin: 5px;
+    border: 1px solid;
+    padding: 5px;
+    width: 50%;
+    max-width: 50%;
+    table-layout: fixed;
+}
+tr {
+    margin: 1px;
+}
+td {
+    text-align: center;
+}
+button, input {
+    margin: 2px;
+}
+.test {
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.description {
+    background-color: lightpink;
+    text-align: left;
+}
+.hint {
+    background-color: lightgreen;
+}

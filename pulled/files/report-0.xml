@@ -1,0 +1,130 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<testsuite tests="4" failures="2" errors="0" skipped="0" time="6.839" timestamp="2022-04-28T11:15Z">
+  <properties>
+    <property name="device.manufacturer" value="unknown" />
+    <property name="device.model" value="Android SDK built for x86_64" />
+    <property name="device.apiLevel" value="30" />
+  </properties>
+  <testcase name="landscapeTests2(com.example.homework1.UIDesignTests)" classname="com.example.homework1.UIDesignTests" time="1.956" />
+  <testcase name="landscapeTests(com.example.homework1.UIDesignTests)" classname="com.example.homework1.UIDesignTests" time="1.885" />
+  <testcase name="portraitTests2(com.example.homework1.UIDesignTests)" classname="com.example.homework1.UIDesignTests" time="1.057">
+    <failure type="androidx.test.espresso.base.DefaultFailureHandler$AssertionFailedWithCauseError" message="View:AppCompatButton{id=2131230936, res-name=port_prev_button, visibility=VISIBLE, width=236, height=126, has-focus=false, has-focusable=true, has-window-focus=true, is-clickable=true, is-enabled=true, is-focused=false, is-focusable=true, is-layout-requested=false, is-selected=false, layout-params=androidx.constraintlayout.widget.ConstraintLayout$LayoutParams@fe927d, tag=null, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=1416.0, text=Previous, input-type=0, ime-target=false, has-links=false} is not aligned top with view view.getId() is &lt;2131230935&gt;&#10;Expected: is &lt;true&gt;&#10;     Got: was &lt;false&gt;&#10;">androidx.test.espresso.base.DefaultFailureHandler$AssertionFailedWithCauseError: View:AppCompatButton{id=2131230936, res-name=port_prev_button, visibility=VISIBLE, width=236, height=126, has-focus=false, has-focusable=true, has-window-focus=true, is-clickable=true, is-enabled=true, is-focused=false, is-focusable=true, is-layout-requested=false, is-selected=false, layout-params=androidx.constraintlayout.widget.ConstraintLayout$LayoutParams@fe927d, tag=null, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=1416.0, text=Previous, input-type=0, ime-target=false, has-links=false} is not aligned top with view view.getId() is &lt;2131230935&gt;
+Expected: is &lt;true&gt;
+     Got: was &lt;false&gt;
+
+	at dalvik.system.VMStack.getThreadStackTrace(Native Method)
+	at java.lang.Thread.getStackTrace(Thread.java:1736)
+	at androidx.test.espresso.base.DefaultFailureHandler.getUserFriendlyError(DefaultFailureHandler.java:12)
+	at androidx.test.espresso.base.DefaultFailureHandler.handle(DefaultFailureHandler.java:7)
+	at androidx.test.espresso.ViewInteraction.waitForAndHandleInteractionResults(ViewInteraction.java:5)
+	at androidx.test.espresso.ViewInteraction.check(ViewInteraction.java:12)
+	at com.example.homework1.UIDesignTests.portraitTests2(UIDesignTests.kt:53)
+	at java.lang.reflect.Method.invoke(Native Method)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at androidx.test.internal.runner.junit4.statement.RunBefores.evaluate(RunBefores.java:80)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at androidx.test.ext.junit.runners.AndroidJUnit4.run(AndroidJUnit4.java:162)
+	at org.junit.runners.Suite.runChild(Suite.java:128)
+	at org.junit.runners.Suite.runChild(Suite.java:27)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+	at androidx.test.internal.runner.TestExecutor.execute(TestExecutor.java:56)
+	at androidx.test.runner.AndroidJUnitRunner.onStart(AndroidJUnitRunner.java:444)
+	at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:2205)
+Caused by: junit.framework.AssertionFailedError: View:AppCompatButton{id=2131230936, res-name=port_prev_button, visibility=VISIBLE, width=236, height=126, has-focus=false, has-focusable=true, has-window-focus=true, is-clickable=true, is-enabled=true, is-focused=false, is-focusable=true, is-layout-requested=false, is-selected=false, layout-params=androidx.constraintlayout.widget.ConstraintLayout$LayoutParams@fe927d, tag=null, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=1416.0, text=Previous, input-type=0, ime-target=false, has-links=false} is not aligned top with view view.getId() is &lt;2131230935&gt;
+Expected: is &lt;true&gt;
+     Got: was &lt;false&gt;
+
+	at androidx.test.espresso.matcher.ViewMatchers.assertThat(ViewMatchers.java:16)
+	at androidx.test.espresso.assertion.PositionAssertions$1.check(PositionAssertions.java:19)
+	at androidx.test.espresso.ViewInteraction$SingleExecutionViewAssertion.check(ViewInteraction.java:2)
+	at androidx.test.espresso.ViewInteraction$2.call(ViewInteraction.java:12)
+	at androidx.test.espresso.ViewInteraction$2.call(ViewInteraction.java:1)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at android.os.Handler.handleCallback(Handler.java:938)
+	at android.os.Handler.dispatchMessage(Handler.java:99)
+	at android.os.Looper.loop(Looper.java:223)
+	at android.app.ActivityThread.main(ActivityThread.java:7656)
+	at java.lang.reflect.Method.invoke(Native Method)
+	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:592)
+	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:947)
+</failure>
+  </testcase>
+  <testcase name="portraitTests(com.example.homework1.UIDesignTests)" classname="com.example.homework1.UIDesignTests" time="1.831">
+    <failure type="androidx.test.espresso.base.DefaultFailureHandler$AssertionFailedWithCauseError" message="View:AppCompatButton{id=2131230936, res-name=port_prev_button, visibility=VISIBLE, width=236, height=126, has-focus=false, has-focusable=true, has-window-focus=true, is-clickable=true, is-enabled=true, is-focused=false, is-focusable=true, is-layout-requested=false, is-selected=false, layout-params=androidx.constraintlayout.widget.ConstraintLayout$LayoutParams@4d64a4d, tag=null, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=1416.0, text=Previous, input-type=0, ime-target=false, has-links=false} is not aligned top with view view.getId() is &lt;2131230935&gt;&#10;Expected: is &lt;true&gt;&#10;     Got: was &lt;false&gt;&#10;">androidx.test.espresso.base.DefaultFailureHandler$AssertionFailedWithCauseError: View:AppCompatButton{id=2131230936, res-name=port_prev_button, visibility=VISIBLE, width=236, height=126, has-focus=false, has-focusable=true, has-window-focus=true, is-clickable=true, is-enabled=true, is-focused=false, is-focusable=true, is-layout-requested=false, is-selected=false, layout-params=androidx.constraintlayout.widget.ConstraintLayout$LayoutParams@4d64a4d, tag=null, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=1416.0, text=Previous, input-type=0, ime-target=false, has-links=false} is not aligned top with view view.getId() is &lt;2131230935&gt;
+Expected: is &lt;true&gt;
+     Got: was &lt;false&gt;
+
+	at dalvik.system.VMStack.getThreadStackTrace(Native Method)
+	at java.lang.Thread.getStackTrace(Thread.java:1736)
+	at androidx.test.espresso.base.DefaultFailureHandler.getUserFriendlyError(DefaultFailureHandler.java:12)
+	at androidx.test.espresso.base.DefaultFailureHandler.handle(DefaultFailureHandler.java:7)
+	at androidx.test.espresso.ViewInteraction.waitForAndHandleInteractionResults(ViewInteraction.java:5)
+	at androidx.test.espresso.ViewInteraction.check(ViewInteraction.java:12)
+	at com.example.homework1.UIDesignTests.portraitTests(UIDesignTests.kt:28)
+	at java.lang.reflect.Method.invoke(Native Method)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at androidx.test.internal.runner.junit4.statement.RunBefores.evaluate(RunBefores.java:80)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at androidx.test.ext.junit.runners.AndroidJUnit4.run(AndroidJUnit4.java:162)
+	at org.junit.runners.Suite.runChild(Suite.java:128)
+	at org.junit.runners.Suite.runChild(Suite.java:27)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+	at androidx.test.internal.runner.TestExecutor.execute(TestExecutor.java:56)
+	at androidx.test.runner.AndroidJUnitRunner.onStart(AndroidJUnitRunner.java:444)
+	at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:2205)
+Caused by: junit.framework.AssertionFailedError: View:AppCompatButton{id=2131230936, res-name=port_prev_button, visibility=VISIBLE, width=236, height=126, has-focus=false, has-focusable=true, has-window-focus=true, is-clickable=true, is-enabled=true, is-focused=false, is-focusable=true, is-layout-requested=false, is-selected=false, layout-params=androidx.constraintlayout.widget.ConstraintLayout$LayoutParams@4d64a4d, tag=null, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=1416.0, text=Previous, input-type=0, ime-target=false, has-links=false} is not aligned top with view view.getId() is &lt;2131230935&gt;
+Expected: is &lt;true&gt;
+     Got: was &lt;false&gt;
+
+	at androidx.test.espresso.matcher.ViewMatchers.assertThat(ViewMatchers.java:16)
+	at androidx.test.espresso.assertion.PositionAssertions$1.check(PositionAssertions.java:19)
+	at androidx.test.espresso.ViewInteraction$SingleExecutionViewAssertion.check(ViewInteraction.java:2)
+	at androidx.test.espresso.ViewInteraction$2.call(ViewInteraction.java:12)
+	at androidx.test.espresso.ViewInteraction$2.call(ViewInteraction.java:1)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at android.os.Handler.handleCallback(Handler.java:938)
+	at android.os.Handler.dispatchMessage(Handler.java:99)
+	at android.os.Looper.loop(Looper.java:223)
+	at android.app.ActivityThread.main(ActivityThread.java:7656)
+	at java.lang.reflect.Method.invoke(Native Method)
+	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:592)
+	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:947)
+</failure>
+  </testcase>
+</testsuite>

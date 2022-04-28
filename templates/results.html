@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+
+{% block head %}
+<title>Kodutööde hindaja</title>
+    <script>
+
+    </script>
+{% endblock %}
+
+
+{% block body %}
+<h1>Sinu kodutöö hindamistulemused:</h1>
+    <div class="content">
+        <p>Automaattestide tulemused: <br>
+        Mitteläbinud testide kohta saate lisainfot nende peale vajutades</p>
+        <button onclick="history.back()">Proovi uuesti</button>
+        <table>
+            <tr>
+                <th>Testi nimi</th>
+                <th>Testi Tüüp</th>
+                <th>Kulunud aeg</th>
+                <th>Tulemus</th>
+            </tr>
+        {% for result in results %}
+            <tr class="test" onclick="toggleDescription('{{ result[0] }}')">
+                <td>{{ result[0] }}</td>
+                <td>{{ result[1] }}</td>
+                <td>{{ result[2] }}s</td>
+                {% if result[3] == "Success" %}
+                    <td id="success">{{ result[3] }}</td>
+                {% else %}
+                    <td id="failure">{{ result[3] }}</td>
+                {% endif %}
+            </tr>
+            {% if result[3] == "Failure" %}
+            <tr id="{{ result[0] }}" hidden>
+                <td class="description" colspan="4">
+                    {{ result[4] }} <br>
+                    <div class="hint">
+                        {{ result[5] }}
+                    </div>
+                </td>
+            </tr>
+            {% endif %}
+        {% endfor %}
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                {% if percent == 100.0 %}
+                    <td id="success">{{ percent }}%</td>
+                {% elif percent >= 50.0 %}
+                    <td id="mediocre">{{ percent }}%</td>
+                {% else %}
+                    <td id="failure">{{ percent }}%</td>
+                {% endif %}
+            </tr>
+        </table>
+    </div>
+
+{% endblock %}
