@@ -25,20 +25,21 @@ def validate(request):
         print("Ei läbinud validatsiooni")
         return False, "Seda kodutööd hetkel (või enam) esitada ei saa."
 
-    fCopy = request.files['file']
-    fCopy.save(os.path.join("uploads/", secure_filename('valideeritav-app.apk')))
-    fCopy.seek(0)
-    p_name = cmd(r'aapt dump badging D:\TU\Bakatoo\flaskProject\uploads\valideeritav-app.apk | findstr package',
-                       r'C:\Users\sanma\AppData\Local\Android\Sdk\build-tools\32.0.0').split(' ')[1].split('\'')[1]
-    #print(p_name)
-    if p_name not in pkgs:
-        print("Ei läbinud validatsiooni")
-        return False, "Ebakorrektne package name, kontrolli üle oma rakenduse applicationId mooduli build.gradle-st."
-
     queueSize = queue.qsize() + 1 if working else queue.qsize()
     if queueSize >= 10:
         print("Järjekord on täis")
         return False, "Järjekord on hetkel täis, proovige esitada mõne minuti pärast uuesti."
+
+    fCopy = request.files['file']
+    fCopy.save(os.path.join("uploads/", secure_filename('valideeritav-app.apk')))
+    fCopy.seek(0)
+    p_name = cmd(r'aapt dump badging D:\TU\Bakatoo\flaskProject\uploads\valideeritav-app.apk | findstr package',
+                 r'C:\Users\sanma\AppData\Local\Android\Sdk\build-tools\32.0.0').split(' ')[1].split('\'')[1]
+    # print(p_name)
+    if p_name not in pkgs:
+        print("Ei läbinud validatsiooni")
+        return False, "Ebakorrektne package name, kontrolli üle oma rakenduse applicationId mooduli build.gradle-st."
+
     print("Fail valideeriti.")
     return True, ""
 
@@ -46,7 +47,7 @@ def validate(request):
 working = False
 queue = Queue()
 def handle_post():
-    global working, queue
+    global working
     if working:
         time.sleep(1)
         return handle_post()
@@ -55,7 +56,7 @@ def handle_post():
         request, saabunud = queue.get()
         fail = request.files['file']
         matrikkel = request.form['matrikkel']
-        #print(fail.filename, matrikkel)
+        # print(fail.filename, matrikkel)
         fail.save(os.path.join("uploads/", secure_filename('testitav-app.apk')))  # fail.filename
         print('Fail kätte saadud, algab testimine.')
         algus = datetime.now()
@@ -92,13 +93,11 @@ def cmd(command, cwd=os.getcwd()):
     return process.stdout
 
 
-#print(cmd("whoami"))
-#print(cmd(r'aapt dump badging D:\TU\Bakatoo\flaskProject\uploads\testitav-app.apk | findstr package',
+# print(cmd("whoami"))
+# print(cmd(r'aapt dump badging D:\TU\Bakatoo\flaskProject\uploads\testitav-app.apk | findstr package',
 #                       r'C:\Users\sanma\AppData\Local\Android\Sdk\build-tools\32.0.0'))
 
 def get_results(matrikkel, arrivalTime, startTime):
-    global package_name
-
     tree = ET.parse('pulled/files/report-0.xml')
     root = tree.getroot()
     results = []
@@ -109,24 +108,23 @@ def get_results(matrikkel, arrivalTime, startTime):
             tyyp = test[-1][:-1]
             aeg = list(elem.attrib.values())[-1]
             tulemus = "Success"
-            errorMes = "Success"
-            vihje = get_hint(nimi, tyyp)
+            errorMes = ""
+            vihje = ""
             # print(vihje)
             results.append([nimi, tyyp, aeg, tulemus, errorMes, vihje])
         elif elem.tag == 'failure':  # kui test ei läinud läbi
             # print(list(elem.attrib.values())[1])
-            results[-1][3] = "Failure"
-            results[-1][4] = list(elem.attrib.values())[1]
+            results[-1][3] = "Failure"  # tulemus
+            results[-1][4] = list(elem.attrib.values())[1]  # errorMes
+            results[-1][5] = get_hint(results[-1][0], results[-1][1])  # vihje
 
     resList = [result[3] for result in results]
     percent = (resList.count("Success") / len(results)) * 100
     log_result(matrikkel, package_name, percent, arrivalTime, startTime)
-
     return results, percent
 
 
 def get_hint(nimi, tyyp):
-    global hintsDB
     hint = ""
     testClass = hintsDB.find({"classname": tyyp})
     for test in testClass[0]["tests"]:
@@ -137,7 +135,6 @@ def get_hint(nimi, tyyp):
 
 
 def log_result(matrikkel, pack_name, percent, saabunud, algus):
-    global resultsDB
     saabunud = saabunud.strftime("%d.%m.%Y %H:%M:%S")
     algus = algus.strftime("%d.%m.%Y %H:%M:%S")
     lopp = datetime.now()
