@@ -13,7 +13,7 @@
             <form method="post" enctype="multipart/form-data">
                 <p>Sisestage oma rakenduse apk ja oma matrikli number:</p>
                 <input type="file" id="file" name="file" accept=".apk"> <br>
-                <label>Vali kodutöö: </label>
+                <label for="homework"> Vali kodutöö:
                     <select name="homework">
                         <option value="homework1">Kodutöö 1</option>
                         <option value="homework2">Kodutöö 2</option>
@@ -22,12 +22,15 @@
                         <option value="homework5">Kodutöö 5</option>
                         <option value="homework6">Kodutöö 6</option>
                     </select> <br>
-                <input type="text" id="matrikkel" name="matrikkel" placeholder="Matrikli nr"> <br>
-                <br>
+                 </label>
+                <label for="matrikkel">
+                    <input type="text" id="matrikkel" name="matrikkel" placeholder="Matrikli nr">
+                </label>
+                <br> <br>
                 <button onclick="">Esita hindamiseks</button>
             </form>
             <p id="failure">{{ errorMessage }}</p>
-            <p>Testide jooksutamiseks võib kuluda kuni minut, selle aja jooksul palume veebilehte mitte värskendada.</p>
-            <p>Parasjagu töös olevate kodutööde arv serveris:  {{ queueSize }}/10</p>
+            <p>Kodutöö hindamiseks võib kuluda kuni paar minutit, selle aja jooksul palume veebilehte mitte värskendada.</p>
+            <p>Parasjagu hindamisjärgus olevate kodutööde arv serveris:  {{ queueSize }}/10</p>
         </div>
 {% endblock %}
