@@ -17,7 +17,7 @@ resultsDB = client["bakatoo"]["results"]
 # print(hintsDB)
 # print(resultsDB)
 
-pkgs = ["com.example.app1", "com.example.app2"]
+pkgs = ["com.example.homework1", "com.example.homework2"]
 accepted = ["homework1", "homework2"]
 def validate(request):
     homework = request.form["homework"]
@@ -35,7 +35,7 @@ def validate(request):
     fCopy.seek(0)
     p_name = cmd(r'aapt dump badging D:\TU\Bakatoo\flaskProject\uploads\valideeritav-app.apk | findstr package',
                  r'C:\Users\sanma\AppData\Local\Android\Sdk\build-tools\32.0.0').split(' ')[1].split('\'')[1]
-    # print(p_name)
+    print(p_name)
     if p_name not in pkgs:
         print("Ei läbinud validatsiooni")
         return False, "Ebakorrektne package name, kontrolli üle oma rakenduse applicationId mooduli build.gradle-st."
