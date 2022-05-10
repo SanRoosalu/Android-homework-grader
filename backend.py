@@ -104,14 +104,14 @@ def get_results(matrikkel, arrivalTime, startTime):
     for elem in root.iter():
         if elem.tag == 'testcase':
             test = list(elem.attrib.values())[0].replace('.', '(').split('(')
+            klass = test[-1][:-1]
             nimi = test[0]
-            tyyp = test[-1][:-1]
             aeg = list(elem.attrib.values())[-1]
             tulemus = "Success"
             errorMes = ""
             vihje = ""
             # print(vihje)
-            results.append([nimi, tyyp, aeg, tulemus, errorMes, vihje])
+            results.append([klass, nimi, aeg, tulemus, errorMes, vihje])
         elif elem.tag == 'failure':  # kui test ei läinud läbi
             # print(list(elem.attrib.values())[1])
             results[-1][3] = "Failure"  # tulemus
@@ -124,9 +124,9 @@ def get_results(matrikkel, arrivalTime, startTime):
     return results, percent
 
 
-def get_hint(nimi, tyyp):
+def get_hint(klass, nimi):
     hint = ""
-    testClass = hintsDB.find({"classname": tyyp})
+    testClass = hintsDB.find({"classname": klass})
     for test in testClass[0]["tests"]:
         if test["name"] == nimi:
             hint = test["hint"]
@@ -135,10 +135,10 @@ def get_hint(nimi, tyyp):
 
 
 def log_result(matrikkel, pack_name, percent, saabunud, algus):
-    saabunud = saabunud.strftime("%d.%m.%Y %H:%M:%S")
-    algus = algus.strftime("%d.%m.%Y %H:%M:%S")
+    saabunud = saabunud.strftime("%d.%m.%Y %H:%M:%S:%f")
+    algus = algus.strftime("%d.%m.%Y %H:%M:%S:%f")
     lopp = datetime.now()
-    lopp = lopp.strftime("%d.%m.%Y %H:%M:%S")
+    lopp = lopp.strftime("%d.%m.%Y %H:%M:%S:%f")
     log = {
         "SIS_ID": matrikkel, "Homework": pack_name, "Result": percent,
         "ArrivalTime": saabunud, "TestingStart": algus, "TestingEnd": lopp

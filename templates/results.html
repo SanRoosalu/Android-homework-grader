@@ -17,13 +17,13 @@
         <button onclick="history.back()">Proovi uuesti</button>
         <table>
             <tr>
+                <th>Testi klass</th>
                 <th>Testi nimi</th>
-                <th>Testi tüüp</th>
                 <th>Kulunud aeg</th>
                 <th>Tulemus</th>
             </tr>
         {% for result in results %}
-            <tr class="test" onclick="toggleDescription('{{ result[0] }}')">
+            <tr class="test" onclick="toggleDescription('{{ result[1] }}')">
                 <td>{{ result[0] }}</td>
                 <td>{{ result[1] }}</td>
                 <td>{{ result[2] }}s</td>
@@ -34,7 +34,7 @@
                 {% endif %}
             </tr>
             {% if result[3] == "Failure" %}
-            <tr id="{{ result[0] }}" hidden>
+            <tr id="{{ result[1] }}" hidden>
                 <td class="description" colspan="4">
                     {{ result[4] }} <br>
                     <div class="hint">
