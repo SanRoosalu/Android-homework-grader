@@ -1,22 +1,77 @@
-{
-"classes": [
+[{
+  "_id": {
+    "$oid": "62557e765f4cfbe61df5f537"
+  },
+  "classname": "UIDesignTests",
+  "tests": [
     {
-        "classname": "UIDesignTests",
-        "tests" : [
-            {"name": "landscapeTests", "hint": "vihje landscapeTests-ile"},
-            {"name": "portraitTests", "hint": "Kontrolli, kas nupp \"Next\" on ikka all Vasakus nurgas."},
-            {"name": "landscapeTests2", "hint": "vihje landscapeTests2-le"},
-            {"name": "portraitTests2", "hint": "Kontrolli, kas nupp \"Next\" on ikka all Vasakus nurgas."}
-        ]
+      "name": "landscapeTests",
+      "hint": "Kontrolli, kas nupp \"Next\" on ikka vaate paremas servas."
     },
     {
-        "classname": "UIInteractionTests",
-        "tests" : [
-            {"name": "buttonTests", "hint": "vihje buttonTests-ile"},
-            {"name": "recyclerTests", "hint": "Kontrolli, kas teisendus ilmus aknasse."},
-            {"name": "buttonTests2", "hint": "vihje buttonTests2-le"},
-            {"name": "recyclerTests2", "hint": "Kontrolli, kas teisendus ilmus aknasse."}
-        ]
+      "name": "portraitTests",
+      "hint": "Kontrolli, kas nupp \"Next\" on ikka all paremas nurgas."
+    },
+    {
+      "name": "landscapeTests2",
+      "hint": "Kontrolli, kas nupp \"Previous\" on ikka vaate vasakus servas."
+    },
+    {
+      "name": "portraitTests2",
+      "hint": "Kontrolli, kas nupp \"Previous\" on ikka all vasakus nurgas."
     }
-    ]
-}
+  ]
+},{
+  "_id": {
+    "$oid": "62557e8d5f4cfbe61df5f539"
+  },
+  "classname": "UIInteractionTests",
+  "tests": [
+    {
+      "name": "buttonTests",
+      "hint": "vihje buttonTests-ile"
+    },
+    {
+      "name": "recyclerTests",
+      "hint": "Kontrolli, kas teisendus ilmus aknasse."
+    },
+    {
+      "name": "buttonTests2",
+      "hint": "vihje buttonTests2-le"
+    },
+    {
+      "name": "recyclerTests2",
+      "hint": "Kontrolli, kas teisendus ilmus aknasse."
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "6279994b7b555dd63b29d09a"
+  },
+  "classname": "PortraitTests",
+  "tests": [
+    {
+      "name": "nextButtonTestsP",
+      "hint": "Kontrolli, kas nupp \"Next\" on ikka all paremas nurgas."
+    },
+    {
+      "name": "prevButtonTestsP",
+      "hint": "Kontrolli, kas nupp \"Previous\" on ikka all vasakus nurgas."
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "627999807b555dd63b29d09b"
+  },
+  "classname": "LandscapeTests",
+  "tests": [
+    {
+      "name": "nextButtonTestsL",
+      "hint": "Kontrolli, kas nupp \"Next\" on ikka vaate paremas servas."
+    },
+    {
+      "name": "prevButtonTestsL",
+      "hint": "Kontrolli, kas nupp \"Previous\" on ikka vaate vasakus servas."
+    }
+  ]
+}]
