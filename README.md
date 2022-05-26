@@ -13,6 +13,8 @@ Mobiilirakenduste arendus, Android, automaathindajad, testimine, veebirakendus.
 CERCS:
 P175 Informaatika, süsteemiteooria 
 
+Link lõputöö dokumendile: https://comserv.cs.ut.ee/ati_thesis/datasheet.php?id=74482
+
 
 # A intracurricular solution based on automated tests for grading Android applications
 
@@ -29,3 +31,5 @@ Mobile application development, Android, automated graders, testing, web applica
 
 CERCS: 
 P175 Informatics, systems theory
+
+Link to the thesis' full document: https://comserv.cs.ut.ee/ati_thesis/datasheet.php?id=74482
